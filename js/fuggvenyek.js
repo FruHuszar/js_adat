@@ -8,22 +8,22 @@ export function rendezesEsemenykezelo(lista){
                 lista.sort(function(a,b){
                     return a.atlagEletkor-b.atlagEletkor
                 });
-                kartyakMegjelenit(lista);
+                kartyakMegjelenit(lista);atlageletkor(lista);
             } else if (gombok[index].id == "kor_csokken"){
                 lista.reverse(function(a,b){
                     return a.atlagEletkor-b.atlagEletkor
                 });
-                kartyakMegjelenit(lista);
+                kartyakMegjelenit(lista);atlageletkor(lista);
             } else if (gombok[index].id == "nev_no"){
                 lista.sort(function(a,b){
                     return a.fajnev<b.fajnev?-1:+1;
                 });
-                kartyakMegjelenit(lista);
+                kartyakMegjelenit(lista);atlageletkor(lista);
             } else if (gombok[index].id == "nev_csokken"){
                 lista.sort(function(a,b){
                     return a.fajnev<b.fajnev?+1:-1;
                 });
-                kartyakMegjelenit(lista);
+                kartyakMegjelenit(lista);atlageletkor(lista);
             }
         });
     }
@@ -39,7 +39,17 @@ export function szuresEsemenykezelo(lista) {
                 return a.tipus === szuro;
             });
             //console.log(SZURT);
-            kartyakMegjelenit(SZURT);
+            kartyakMegjelenit(SZURT);atlageletkor(SZURT);
         });
     });
+}
+
+export function atlageletkor(lista) {
+    const ATLAG = lista.reduce(function(osszeg, a) {
+        return osszeg + a.atlagEletkor;
+    }, 0) / lista.length;
+    const kerekitett = (Math.round(ATLAG * 100) / 100).toFixed(2);
+;
+    const pElem = document.querySelector("#atlageletkor p");
+    pElem.innerText = `Az állatok átlagos várható élettartama:  ${kerekitett}`;
 }
