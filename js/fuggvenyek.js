@@ -38,7 +38,7 @@ export function szuresEsemenykezelo(lista) {
             const SZURT = lista.filter(function(a) {
                 return a.tipus === szuro;
             });
-            console.log(SZURT);
+            //console.log(SZURT);
             kartyakMegjelenit(SZURT);
         });
     });
