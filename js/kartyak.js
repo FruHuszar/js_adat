@@ -1,4 +1,4 @@
-import { megjelenit } from "/js/kartya.js";
+import { megjelenit } from "./kartya.js";
 
 
 export function kartyakMegjelenit(ALLATLISTA){
