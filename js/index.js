@@ -1,6 +1,6 @@
-import { ALLATLISTA } from "/js/adat.js";
-import { kartyakMegjelenit } from "/js/kartyak.js";
-import { rendezesEsemenykezelo } from "/js/fuggvenyek.js";
+import { ALLATLISTA } from "./adat.js";
+import { kartyakMegjelenit } from "./kartyak.js";
+import { rendezesEsemenykezelo } from "./fuggvenyek.js";
 
 /*for (let index = 0; index < ALLATLISTA.length; index++) {
     megjelenit(ALLATLISTA[index]);    
